@@ -1,0 +1,490 @@
+/* =====================================================
+   RESET & BASE STYLES
+===================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fb;
+    color: #172033;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+
+/* =====================================================
+   UTILITIES
+===================================================== */
+
+.hidden {
+    display: none !important;
+}
+
+.page {
+    display: none;
+}
+
+.active-page {
+    display: block;
+}
+
+.page-header {
+    margin-bottom: 25px;
+}
+
+.page-header h2 {
+    margin: 0 0 7px;
+    font-size: 28px;
+}
+
+.page-header p {
+    margin: 0;
+    color: #6b7280;
+}
+
+
+/* =====================================================
+   AUTHENTICATION
+===================================================== */
+
+.auth-screen {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    background: #f5f7fb;
+}
+
+.auth-box {
+    width: 100%;
+    max-width: 440px;
+    background: white;
+    padding: 35px;
+    border-radius: 18px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 35px;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 25px;
+}
+
+.logo p {
+    margin: 5px 0 0;
+    color: #777;
+    font-size: 13px;
+}
+
+.logo-mark {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #172033;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.logo-mark.small {
+    width: 38px;
+    height: 38px;
+    font-size: 19px;
+}
+
+.auth-box h2 {
+    margin-bottom: 20px;
+}
+
+.auth-box input,
+.auth-box select {
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 13px;
+    border: 1px solid #d9dee8;
+    border-radius: 9px;
+    outline: none;
+}
+
+.auth-box button:not(.link-btn) {
+    width: 100%;
+    padding: 13px;
+    border: 0;
+    border-radius: 9px;
+    background: #172033;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.switch-text {
+    text-align: center;
+    color: #6b7280;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.link-btn {
+    border: 0;
+    background: none;
+    color: #172033;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header {
+    height: 70px;
+    background: white;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand strong {
+    display: block;
+}
+
+.brand span {
+    display: block;
+    color: #7b8190;
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+.user-area {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.user-area strong,
+.user-area small {
+    display: block;
+}
+
+.user-area small {
+    color: #777;
+    margin-top: 3px;
+}
+
+.logout-btn {
+    padding: 9px 15px;
+    border: 1px solid #d9dee8;
+    background: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   LAYOUT & NAVIGATION
+===================================================== */
+
+.layout {
+    min-height: calc(100vh - 70px);
+    display: flex;
+}
+
+aside {
+    width: 230px;
+    background: white;
+    border-right: 1px solid #e5e7eb;
+    padding: 25px 15px;
+}
+
+.nav-title {
+    font-size: 11px;
+    color: #8b93a3;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 10px;
+    margin-top: 8px;
+}
+
+.nav-btn {
+    width: 100%;
+    border: 0;
+    background: transparent;
+    text-align: left;
+    padding: 12px 13px;
+    border-radius: 8px;
+    margin-bottom: 4px;
+    cursor: pointer;
+    color: #465063;
+}
+
+.nav-btn:hover,
+.nav-btn.active {
+    background: #eef1f6;
+    color: #172033;
+    font-weight: 600;
+}
+
+main {
+    flex: 1;
+    padding: 30px;
+    overflow-x: auto;
+}
+
+
+/* =====================================================
+   CARDS & CONTAINERS
+===================================================== */
+
+.card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 22px;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+
+/* =====================================================
+   INPUTS & BUTTONS
+===================================================== */
+
+input,
+select,
+textarea {
+    padding: 12px;
+    border: 1px solid #d9dee8;
+    border-radius: 8px;
+    outline: none;
+    width: 100%;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 90px;
+}
+
+.primary-btn {
+    background: #172033;
+    color: white;
+    border: 0;
+    padding: 11px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.danger-btn {
+    background: #b42318;
+    color: white;
+    border: 0;
+    padding: 9px 13px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   TABLES
+===================================================== */
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 13px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+th {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+
+/* =====================================================
+   WORKSPACE STATS & DASHBOARD
+===================================================== */
+
+.workspace-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.workspace-stat {
+    padding: 18px;
+    border-radius: 12px;
+    background: #f5f7fb;
+    border: 1px solid #e5e7eb;
+}
+
+.workspace-stat span {
+    display: block;
+    font-size: 13px;
+    color: #737b8c;
+    margin-bottom: 7px;
+}
+
+.workspace-stat strong {
+    font-size: 25px;
+}
+
+
+/* =====================================================
+   CHAIR & DELEGATE NOTES
+===================================================== */
+
+.chair-notes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.chair-note-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 18px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+}
+
+.chair-note-card h3 {
+    margin: 0 0 4px;
+}
+
+.chair-note-card div {
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 12px;
+}
+
+.chair-note-card textarea {
+    min-height: 110px;
+}
+
+
+/* =====================================================
+   DARK THEME
+===================================================== */
+
+body.theme-dark {
+    background: #111827;
+    color: #f3f4f6;
+}
+
+body.theme-dark header,
+body.theme-dark aside,
+body.theme-dark .card,
+body.theme-dark .chair-note-card {
+    background: #1f2937;
+    border-color: #374151;
+}
+
+body.theme-dark .auth-screen {
+    background: #111827;
+}
+
+body.theme-dark .auth-box {
+    background: #1f2937;
+}
+
+body.theme-dark input,
+body.theme-dark select,
+body.theme-dark textarea {
+    background: #111827;
+    color: #f3f4f6;
+    border-color: #374151;
+}
+
+body.theme-dark .workspace-stat {
+    background: #111827;
+    border-color: #374151;
+}
+
+body.theme-dark .logout-btn {
+    background: #1f2937;
+    color: #f3f4f6;
+    border-color: #374151;
+}
+
+body.theme-dark th,
+body.theme-dark td {
+    border-color: #374151;
+}
+
+
+/* =====================================================
+   RESPONSIVE DESIGN
+===================================================== */
+
+@media (max-width: 850px) {
+    .layout {
+        flex-direction: column;
+    }
+
+    aside {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #e5e7eb;
+        padding: 15px;
+    }
+
+    main {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 0 15px;
+    }
+
+    .user-area {
+        gap: 10px;
+    }
+
+    .chair-notes-grid {
+        grid-template-columns: 1fr;
+    }
+}

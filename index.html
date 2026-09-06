@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DelegateOS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- AUTH SCREEN -->
+    <div id="authScreen" class="auth-screen">
+        <div class="auth-box">
+            <div class="logo">
+                <div class="logo-mark">D</div>
+                <div>
+                    <h1>DelegateOS</h1>
+                    <p>Model UN Conference Management</p>
+                </div>
+            </div>
+
+            <!-- LOGIN -->
+            <div id="loginForm">
+                <h2>Sign In</h2>
+                <input type="text" id="loginUsername" placeholder="Username or Email">
+                <input type="password" id="loginPassword" placeholder="Password">
+                <button onclick="login()">Sign In</button>
+                <p class="switch-text">
+                    Don't have an account?
+                    <button class="link-btn" onclick="showSignup()">Sign Up</button>
+                </p>
+            </div>
+
+            <!-- SIGNUP -->
+            <div id="signupForm" class="hidden">
+                <h2>Create Account</h2>
+                <input type="text" id="signupUsername" placeholder="Username">
+                <input type="email" id="signupEmail" placeholder="Email">
+                <input type="password" id="signupPassword" placeholder="Password">
+                <select id="signupRole">
+                    <option value="delegate">Delegate</option>
+                    <option value="chair">Chair</option>
+                    <option value="advisor">Advisor</option>
+                    <option value="admin">Administrator</option>
+                </select>
+                <select id="signupConferenceMode" onchange="toggleConferenceFields()">
+                    <option value="create">Create New MUN</option>
+                    <option value="join">Join Existing MUN</option>
+                </select>
+                <div id="createConferenceFields">
+                    <input type="text" id="newConferenceName" placeholder="MUN / Conference Name">
+                </div>
+                <div id="joinConferenceFields" class="hidden">
+                    <input type="text" id="joinConferenceCode" placeholder="Conference Code">
+                </div>
+                <button onclick="signup()">Create Account</button>
+                <p class="switch-text">
+                    Already have an account?
+                    <button class="link-btn" onclick="showLogin()">Sign In</button>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN APPLICATION -->
+    <div id="app" class="hidden">
+        <header>
+            <div class="brand">
+                <div class="logo-mark small">D</div>
+                <div>
+                    <strong>DelegateOS</strong>
+                    <span id="conferenceName"></span>
+                </div>
+            </div>
+            <div class="user-area">
+                <div>
+                    <strong id="userName"></strong>
+                    <small id="userRole"></small>
+                </div>
+                <button class="logout-btn" onclick="logout()">Log Out</button>
+            </div>
+        </header>
+
+        <div class="layout">
+            <aside>
+                <div class="nav-title">WORKSPACE</div>
+                <button class="nav-btn active" data-page="overview">Overview</button>
+                <button class="nav-btn" data-page="committees">Committees</button>
+                <button class="nav-btn chair-only" data-page="workspace">Chair Workspace</button>
+                <button class="nav-btn chair-only" data-page="rollcall">Roll Call</button>
+                <button class="nav-btn chair-only" data-page="motions">Motions</button>
+                <button class="nav-btn chair-only" data-page="chairNotes">Delegate Notes</button>
+                <button class="nav-btn" data-page="delegates">Delegates</button>
+                <button class="nav-btn" data-page="awards">Awards</button>
+
+                <div class="nav-title admin-only">ADMINISTRATION</div>
+                <button class="nav-btn admin-only" data-page="accounts">Accounts</button>
+                <button class="nav-btn admin-only" data-page="settings">Settings</button>
+            </aside>
+
+            <main>
+                <section id="overview" class="page active-page"></section>
+                <section id="committees" class="page"></section>
+                <section id="workspace" class="page"></section>
+                <section id="rollcall" class="page"></section>
+                <section id="motions" class="page"></section>
+                <section id="chairNotes" class="page"></section>
+                <section id="delegates" class="page"></section>
+                <section id="awards" class="page"></section>
+                <section id="accounts" class="page"></section>
+                <section id="settings" class="page"></section>
+            </main>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
